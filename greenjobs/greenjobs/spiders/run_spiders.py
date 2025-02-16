@@ -18,11 +18,11 @@ def run_spider():
 
 
     # Run the spider
-    # process.crawl(GreenJobsBoardSpider)
+    process.crawl(GreenJobsBoardSpider)
     process.crawl(GreenJobsStatesSpider)
     # Set output to the same JSON file (optional, if you want the output in JSON format)
-    # process.settings.set('FEED_FORMAT', 'json')
-    # process.settings.set('FEED_URI', 'greenjobs.json')
+    process.settings.set('FEED_FORMAT', 'json')
+    process.settings.set('FEED_URI', 'greenjobs.json')
 
     # Start crawling
     process.start()
