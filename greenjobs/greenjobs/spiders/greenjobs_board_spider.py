@@ -44,6 +44,6 @@ class GreenJobsBoardSpider(scrapy.Spider):
         # Yield the result with the state
         yield {
             'title': response.meta['title'],
-            'industry': response.meta['industry'],
+            # 'industry': response.meta['industry'],
             'location': location_state.strip() if location_state else location[0].strip()
         }

@@ -48,7 +48,7 @@ class GreenJobsStatesSpider(scrapy.Spider):
         for title in titles:
             yield {
                 'title': title.strip(),
-                'industry': "Energy",
+                # 'industry': "Energy",
                 'location': response.meta['location'],
             }
 

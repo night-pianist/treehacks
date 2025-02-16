@@ -8,21 +8,25 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from greenjobs_board_spider import GreenJobsBoardSpider
 from greenjobs_states import GreenJobsStatesSpider
+from greenjobs_newiee import GreenJobsNewieeSpider
+from greenjobs_nesea import GreenJobsNeseaSpider
+from greenjobs_trellis import GreenJobsTrellisSpider
 
 def run_spider():
     # Create a CrawlerProcess to run your spiders
     process = CrawlerProcess(settings={
     'FEED_FORMAT': 'json',
-    'FEED_URI': 'greenjobs.json',
+    'FEED_URI': 'TRELLIS.json',
 })
 
 
     # Run the spider
-    process.crawl(GreenJobsBoardSpider)
-    process.crawl(GreenJobsStatesSpider)
-    # Set output to the same JSON file (optional, if you want the output in JSON format)
-    process.settings.set('FEED_FORMAT', 'json')
-    process.settings.set('FEED_URI', 'greenjobs.json')
+    # process.crawl(GreenJobsBoardSpider)
+    # process.crawl(GreenJobsStatesSpider)
+    # process.crawl(GreenJobsNewieeSpider)
+    # process.crawl(GreenJobsNeseaSpider)
+    process.crawl(GreenJobsTrellisSpider)
+
 
     # Start crawling
     process.start()
